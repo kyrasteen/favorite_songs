@@ -1,0 +1,6 @@
+<h1>All songs!(index)</h1>
+<% @songs.each do |song| %>
+  <li><%= link_to song.title, song %></li>
+<% end %>
+<%= link_to "New Song", new_song_path %>
+<!-- one thing to evaluate in each erb tag -->
