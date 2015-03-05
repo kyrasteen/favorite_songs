@@ -15,7 +15,7 @@ class SongsController < ApplicationController
   def create
       @song = Song.new(song_params)
     if @song.save
-      redirect_to @song
+      redirect_to user_songs_path
     else
       render :new
       # show same page for user to retry
@@ -28,7 +28,7 @@ class SongsController < ApplicationController
   def update
     #why is the argument song_params
     if @song.update(song_params)
-      redirect_to @song
+      redirect_to user_song_path
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class SongsController < ApplicationController
 
   def destroy
     @song.destroy
-    redirect_to songs_path
+    redirect_to user_songs_path
   end
 
   private

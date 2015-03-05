@@ -1,2 +1,8 @@
 <h1><%= current_user.username %>'s dashboard</h1>
+<ul>
+  <%= link_to "All songs", user_songs_path(current_user.id) %>
+  <!-- <% current_user.songs.each do |song| %>
+  <li><%= link_to song.title, user_song_path(song.user_id, song.id)%></li>
+  <% end %> -->
 <%= link_to 'Logout', logout_path, method: :delete %>
+<div class=dashboard></div>

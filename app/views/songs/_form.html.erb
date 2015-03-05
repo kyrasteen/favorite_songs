@@ -1,4 +1,4 @@
-<%= form_for(@song) do |f| %>
+<%= form_for([current_user, @song]) do |f| %>
   <%= f.text_field :title, placeholder: "title" %>
   <!-- same as input html with type -->
   <%= f.text_field :artist, placeholder: "artist" %>

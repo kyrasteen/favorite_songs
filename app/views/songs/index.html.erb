@@ -1,6 +1,7 @@
-<h1>All songs!(index)</h1>
+<h1>All <%= current_user.username %>'s Songs</h1>
 <% @songs.each do |song| %>
-  <li><%= link_to song.title, song %></li>
+  <li><%= link_to song.title, user_song_path(current_user, song.id) %></li>
 <% end %>
-<%= link_to "New Song", new_song_path %>
+<%= link_to "New Song", new_user_song_path %>
+<%= link_to "Back to Dashboard", user_path(current_user) %>
 <!-- one thing to evaluate in each erb tag -->
